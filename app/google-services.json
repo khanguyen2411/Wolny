@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "401770612413",
+    "project_id": "wolny-b8ffa",
+    "storage_bucket": "wolny-b8ffa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401770612413:android:9167a81da350e9719c59d4",
+        "android_client_info": {
+          "package_name": "com.example.wolny"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "401770612413-o0vj2r3vnhs1kj99bhku0s3mhjlsq119.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqDeJ4m5dOHbLtiFwWu1eRyWrFyopFV-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "401770612413-o0vj2r3vnhs1kj99bhku0s3mhjlsq119.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

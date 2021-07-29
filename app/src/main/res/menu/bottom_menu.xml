@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuMyJobs"
+        android:icon="@drawable/note_icon"
+        android:title="" />
+
+    <item
+        android:id="@+id/menuBrowse"
+        android:icon="@drawable/search_icon"
+        android:title="" />
+
+    <item
+        android:id="@+id/menuPostJob"
+        android:icon="@drawable/add_icon"
+        android:title="" />
+
+    <item
+        android:id="@+id/menuMessage"
+        android:icon="@drawable/message_icon"
+        android:title="" />
+
+    <item
+        android:id="@+id/menuUser"
+        android:icon="@drawable/user_icon"
+        android:title="" />
+</menu>

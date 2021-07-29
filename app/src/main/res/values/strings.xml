@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Wolny</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--On boarding screen-->
+    <string name="onboarding_button_facebook">Continue with Facebook</string>
+    <string name="onboarding_button_email_username">Continue with email/username</string>
+    <string name="onboarding_title">Hire expert freelancers for your job online</string>
+
+
+    <!-- Log in sign up   -->
+    <string name="log_in_sign_up_password">Password</string>
+    <string name="log_in_sign_up_email">Email</string>
+    <string name="log_in_sign_up_username">Username</string>
+    <string name="log_in_sign_up_email_or_username">Email or username</string>
+    <string name="log_in_sign_up_show">Show</string>
+    <string name="log_in_sign_up_hide">Hide</string>
+    <string name="log_in_sign_up_forgot_password">Forgot password?</string>
+    <string name="log_in_sign_up_join_wolny">Join Wolny</string>
+    <string name="log_in_sign_up_log_in">Log in</string>
+
+
+    <!-- Forgot password    -->
+    <string name="forgot_password_title">Forgot password?</string>
+    <string name="forgot_password_subtitle">Enter your registered email address</string>
+    <string name="forgot_password_reset_password">Reset password</string>
+
+    <!-- Bottom navigation menu   -->
+    <string name="bottom_menu_my_jobs">My jobs</string>
+    <string name="bottom_menu_browse">Browse</string>
+    <string name="bottom_menu_post_job">Post jobs</string>
+    <string name="bottom_menu_message">Message</string>
+    <string name="bottom_menu_profile">Profile</string>
+    <string name="quote">A person who never made a mistake, never tried anything new</string>
+    <string name="author">-Albert Einstein</string>
+</resources>
