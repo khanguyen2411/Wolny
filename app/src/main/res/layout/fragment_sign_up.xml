@@ -68,6 +68,7 @@
         app:layout_constraintTop_toBottomOf="@id/guideline01" />
 
     <EditText
+        android:textCursorDrawable="@drawable/color_cursor_edit_text"
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -90,6 +91,7 @@
         app:layout_constraintTop_toBottomOf="@id/guideline03" />
 
     <EditText
+        android:textCursorDrawable="@drawable/color_cursor_edit_text"
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -117,6 +119,7 @@
         app:layout_constraintTop_toBottomOf="@id/guideline07">
 
         <EditText
+            android:textCursorDrawable="@drawable/color_cursor_edit_text"
             android:focusable="true"
             android:id="@+id/etPassword"
             android:layout_width="match_parent"

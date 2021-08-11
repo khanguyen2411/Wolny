@@ -1,8 +1,8 @@
 package com.example.wolny.Activity;
 
 import android.annotation.SuppressLint;
-import android.app.FragmentManager;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -10,12 +10,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.wolny.Adapter.Main.ViewPagerAdapter;
+import com.example.wolny.IMain;
+import com.example.wolny.Presenter.SetQuotePresenter;
 import com.example.wolny.R;
-import com.example.wolny.Utils.PageTransformer;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IMain.ISetQuote {
 
     ViewPager2 viewPager2;
     BottomNavigationView bottomNavigationView;
@@ -59,6 +60,16 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        SetQuotePresenter presenter = new SetQuotePresenter(this);
+
+        presenter.insertQuote(this);
+    }
+
+
+    @Override
+    public void setQuote(String author, String content) {
+
     }
 
 }

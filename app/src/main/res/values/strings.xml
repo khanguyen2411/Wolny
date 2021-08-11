@@ -35,4 +35,8 @@
     <string name="bottom_menu_profile">Profile</string>
     <string name="quote">A person who never made a mistake, never tried anything new</string>
     <string name="author">-Albert Einstein</string>
+    <string name="username">/@username</string>
+    <string name="test_content">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</string>
+
+
 </resources>

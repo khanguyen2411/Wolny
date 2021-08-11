@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="project_type">
+        <item>Fixed Price</item>
+        <item>Hourly</item>
+    </string-array>
+
+    <string-array name="currency_unit">
+        <item>$ USD</item>
+        <item>Đ VND</item>
+    </string-array>
+</resources>

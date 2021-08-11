@@ -38,6 +38,7 @@
             app:layout_constraintGuide_percent="0.95" />
 
         <ImageView
+            android:tint="@color/blue"
             android:id="@+id/ivBack"
             android:layout_width="25dp"
             android:layout_height="25dp"

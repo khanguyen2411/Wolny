@@ -1,27 +1,28 @@
 package com.example.wolny.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
+
 import com.example.wolny.Adapter.OnBoarding.ViewPagerAdapter;
 import com.example.wolny.R;
 
-import me.relex.circleindicator.CircleIndicator2;
+
+
 import me.relex.circleindicator.CircleIndicator3;
 
 public class OnBoardingActivity extends AppCompatActivity {
 
     ViewPager2 viewPager2;
     Button btnFacebook, btnEmailUsername;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,7 @@ public class OnBoardingActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                switch (position){
+                switch (position) {
                     case 0:
                         setTextColor("#0184f7");
                         break;
@@ -70,13 +71,13 @@ public class OnBoardingActivity extends AppCompatActivity {
         });
     }
 
-    void init(){
+    void init() {
         btnFacebook = findViewById(R.id.btnFacebook);
         btnEmailUsername = findViewById(R.id.btnEmailUsername);
         viewPager2 = findViewById(R.id.viewpager);
     }
 
-    void setTextColor(String colorString){
+    void setTextColor(String colorString) {
         int color = Color.parseColor(colorString);
         btnFacebook.setTextColor(color);
         btnEmailUsername.setTextColor(color);

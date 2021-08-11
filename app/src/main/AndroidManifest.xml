@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.wolny">
+    package="com.example.wolny"
+    android:requestLegacyExternalStorage="true">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -12,8 +16,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Wolny">
-        <activity android:name=".Activity.ForgotPasswordActivity"
-            android:parentActivityName=".Activity.LogInSignUpActivity"/>
+        <activity
+            android:name=".Activity.SkillActivity"
+            android:parentActivityName=".Activity.ProfileActivity"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".Activity.NewJobActivity"
+            android:parentActivityName=".Activity.MainActivity" />
+        <activity
+            android:name=".Activity.ProfileActivity"
+            android:parentActivityName=".Activity.MainActivity" />
+        <activity
+            android:name=".Activity.ForgotPasswordActivity"
+            android:parentActivityName=".Activity.LogInSignUpActivity" />
         <activity
             android:name=".Activity.LogInSignUpActivity"
             android:parentActivityName=".Activity.OnBoardingActivity"
