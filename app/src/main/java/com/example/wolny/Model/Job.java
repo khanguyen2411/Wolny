@@ -1,6 +1,9 @@
 package com.example.wolny.Model;
 
-public class Job {
+import java.io.Serializable;
+
+public class Job implements Serializable {
+    String jobID;
     String employerID;
     String freelancerID;
     String category;
@@ -16,7 +19,8 @@ public class Job {
     public Job() {
     }
 
-    public Job(String employerID, String freelancerID, String category, String title, String description, String type, String budget, String skillRequired, String status, String currency, String time) {
+    public Job(String jobID, String employerID, String freelancerID, String category, String title, String description, String type, String budget, String skillRequired, String status, String currency, String time) {
+        this.jobID = jobID;
         this.employerID = employerID;
         this.freelancerID = freelancerID;
         this.category = category;
@@ -28,6 +32,30 @@ public class Job {
         this.status = status;
         this.currency = currency;
         this.time = time;
+    }
+
+    public String getEmployerID() {
+        return employerID;
+    }
+
+    public void setEmployerID(String employerID) {
+        this.employerID = employerID;
+    }
+
+    public String getFreelancerID() {
+        return freelancerID;
+    }
+
+    public void setFreelancerID(String freelancerID) {
+        this.freelancerID = freelancerID;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getTitle() {
@@ -78,14 +106,6 @@ public class Job {
         this.status = status;
     }
 
-    public String getEmployerID() {
-        return employerID;
-    }
-
-    public void setEmployerID(String employerID) {
-        this.employerID = employerID;
-    }
-
     public String getCurrency() {
         return currency;
     }
@@ -102,11 +122,11 @@ public class Job {
         this.time = time;
     }
 
-    public String getFreelancerID() {
-        return freelancerID;
+    public String getJobID() {
+        return jobID;
     }
 
-    public void setFreelancerID(String freelancerID) {
-        this.freelancerID = freelancerID;
+    public void setJobID(String jobID) {
+        this.jobID = jobID;
     }
 }

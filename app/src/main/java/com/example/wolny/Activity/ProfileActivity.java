@@ -90,6 +90,7 @@ public class ProfileActivity extends AppCompatActivity {
         SkillAdapter skillAdapter = new SkillAdapter(this);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         rcvSkill.setLayoutManager(gridLayoutManager);
+        rcvSkill.setNestedScrollingEnabled(true);
         rcvSkill.setAdapter(skillAdapter);
 
         mDatabase.child("Users").child(current_user_id).addValueEventListener(new ValueEventListener() {
@@ -104,7 +105,7 @@ public class ProfileActivity extends AppCompatActivity {
                 tvContentAbout.setText(summary);
 
                 if (!imageUrl.equals("default")){
-                    Picasso.get().load(imageUrl).placeholder(R.drawable.user_icon).into(ivProfile);
+                    Picasso.get().load(imageUrl).into(ivProfile);
                 }
             }
 

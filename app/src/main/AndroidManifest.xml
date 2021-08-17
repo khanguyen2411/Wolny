@@ -16,10 +16,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Wolny">
+        <activity android:name=".Activity.JobDetailActivity"
+            android:parentActivityName=".Activity.MainActivity"/>
         <activity
             android:name=".Activity.SkillActivity"
             android:parentActivityName=".Activity.ProfileActivity"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Activity.NewJobActivity"
             android:parentActivityName=".Activity.MainActivity" />

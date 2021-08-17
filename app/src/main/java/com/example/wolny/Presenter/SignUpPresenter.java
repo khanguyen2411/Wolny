@@ -71,7 +71,7 @@ public class SignUpPresenter {
                         String uid = currentUser.getUid();
                         mDatabase = FirebaseDatabase.getInstance("https://wolny-b8ffa-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
 
-                        User user = new User(username, "default", "I'm a perfect freelancer", "");
+                        User user = new User(uid, username, "default", "I'm a perfect freelancer", "");
 
                         mDatabase.child("Users").child(uid).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override

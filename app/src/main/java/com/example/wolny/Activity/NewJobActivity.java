@@ -64,7 +64,7 @@ public class NewJobActivity extends AppCompatActivity {
                 if (invalidate()) {
                     progressDialog.show();
 
-                    Job job = new Job(employerID, "", category,
+                    Job job = new Job(uuidAsString, employerID, "", category,
                             etTitle.getText().toString(),
                             etDescription.getText().toString(), projectType,
                             etBudget.getText().toString(), etSkillRequired.getText().toString(),

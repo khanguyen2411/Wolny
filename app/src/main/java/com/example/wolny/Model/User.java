@@ -1,12 +1,14 @@
 package com.example.wolny.Model;
 
 public class User {
+    String userID;
     String username;
     String profileImage;
     String summary;
     String skills;
 
-    public User(String username, String profileImage, String summary, String skills) {
+    public User(String userID, String username, String profileImage, String summary, String skills) {
+        this.userID = userID;
         this.username = username;
         this.profileImage = profileImage;
         this.summary = summary;
@@ -46,5 +48,13 @@ public class User {
 
     public void setSkills(String skills) {
         this.skills = skills;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 }

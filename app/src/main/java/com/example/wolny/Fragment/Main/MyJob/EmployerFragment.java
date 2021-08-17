@@ -5,18 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Lifecycle;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
-import androidx.viewpager2.widget.ViewPager2;
 
-import com.example.wolny.Activity.MainActivity;
 import com.example.wolny.R;
 import com.google.android.material.tabs.TabLayout;
+
+import java.util.Objects;
 
 public class EmployerFragment extends Fragment {
 
@@ -48,14 +43,15 @@ public class EmployerFragment extends Fragment {
         tabLayout.addTab(tabLayout.newTab().setText("Progress"));
         tabLayout.addTab(tabLayout.newTab().setText("Past"));
 
-        TabLayout.Tab tab = tabLayout.getTabAt(0);
+        TabLayout.Tab tab = tabLayout.getTabAt(2);
+        assert tab != null;
         tab.select();
-        setFragment(tab.getText().toString(), AS);
+        setFragment(Objects.requireNonNull(tab.getText()).toString(), AS);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                setFragment(tab.getText().toString(), AS);
+                setFragment(Objects.requireNonNull(tab.getText()).toString(), AS);
             }
 
             @Override
@@ -72,11 +68,11 @@ public class EmployerFragment extends Fragment {
         return mView;
     }
 
-    public void setFragment (String type, String as){
+    public void setFragment(String status, String as) {
         Bundle bundle = new Bundle();
 
         bundle.putString("as", as);
-        bundle.putString("type", type);
+        bundle.putString("status", status);
         getChildFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
                 .replace(R.id.fragment_container_view, ListFragment.class, bundle)
