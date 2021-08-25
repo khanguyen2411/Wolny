@@ -40,7 +40,7 @@ public class SignUpFragment extends Fragment implements IMain.ISignUp {
         mView = inflater.inflate(R.layout.fragment_sign_up, container, false);
         init();
         mAuth = FirebaseAuth.getInstance();
-        SignUpPresenter presenter = new SignUpPresenter(this);
+        SignUpPresenter presenter = new SignUpPresenter(this, getActivity());
 
         btnJoin.setOnClickListener(new View.OnClickListener() {
             @Override

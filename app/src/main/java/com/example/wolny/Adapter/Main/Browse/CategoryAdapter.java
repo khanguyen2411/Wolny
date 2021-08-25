@@ -1,6 +1,7 @@
 package com.example.wolny.Adapter.Main.Browse;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.wolny.Activity.CategoryActivity;
 import com.example.wolny.IMain;
 import com.example.wolny.R;
 
@@ -21,9 +23,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     List<String> titles;
     List<Integer> images;
 
-    public CategoryAdapter(Context mContext, List<String> titles, List<Integer> images){
+    public CategoryAdapter(Context mContext, List<String> titles, List<Integer> images) {
         this.mContext = mContext;
-        this.titles =titles;
+        this.titles = titles;
         this.images = images;
         notifyDataSetChanged();
     }
@@ -41,11 +43,10 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         holder.ivCategory.setImageResource(images.get(position));
         holder.tvCategory.setText(titles.get(position));
 
-        holder.setItemClickListener(new IMain.ItemClickListener() {
-            @Override
-            public void onClick(View view, int position, boolean isLongClick) {
-
-            }
+        holder.setItemClickListener((view, position1, isLongClick) -> {
+            Intent intent = new Intent(mContext, CategoryActivity.class);
+            intent.putExtra("category", titles.get(position1));
+            mContext.startActivity(intent);
         });
     }
 
@@ -63,6 +64,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
         ImageView ivCategory;
         TextView tvCategory;
+
         public CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
 

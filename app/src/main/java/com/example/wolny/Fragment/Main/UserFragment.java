@@ -18,6 +18,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.wolny.Activity.OnBoardingActivity;
 import com.example.wolny.Activity.ProfileActivity;
 import com.example.wolny.IMain;
@@ -76,7 +77,7 @@ public class UserFragment extends Fragment implements IMain.ISetQuote {
                 String imageUrl = Objects.requireNonNull(snapshot.child("profileImage").getValue()).toString();
 
                 if (!imageUrl.equals("default")) {
-                    Picasso.get().load(imageUrl).into(ivProfile);
+                    Glide.with(getActivity()).load(imageUrl).into(ivProfile);
                 }
             }
 

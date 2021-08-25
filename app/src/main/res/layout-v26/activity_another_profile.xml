@@ -45,8 +45,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:contentDescription="@string/app_name"
-        android:scaleType="center"
-        android:src="@drawable/work"
+        android:scaleType="centerCrop"
+        android:src="@drawable/milky_way_2"
         app:layout_constraintBottom_toBottomOf="@id/glHor01"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,8 +64,8 @@
 
     <ImageView
         android:id="@+id/ivProfile"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_margin="1dp"
         android:background="@drawable/bg_image_profile"
         android:clickable="true"
@@ -82,7 +82,7 @@
         android:scrollbarThumbHorizontal="@null"
         android:scrollbarThumbVertical="@null"
         android:scrollbars="none"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btHireFreelancer"
         app:layout_constraintEnd_toEndOf="@id/glVer02"
         app:layout_constraintStart_toStartOf="@id/glVer01"
         app:layout_constraintTop_toBottomOf="@id/glHor02">
@@ -127,7 +127,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tvSmallUsername" />
 
             <TextView
-                android:id="@+id/tvContentAbout"
+                android:id="@+id/tvSummary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -137,17 +137,6 @@
                 android:text="@string/test_content"
                 android:textColor="@color/black"
                 app:layout_constraintTop_toBottomOf="@id/tvAbout" />
-
-            <ImageView
-                android:id="@+id/ivEditSummary"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:clickable="true"
-                android:contentDescription="@string/app_name"
-                android:focusable="true"
-                android:src="@drawable/pen"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tvAbout" />
 
             <TextView
                 android:id="@+id/tvSkill"
@@ -159,18 +148,7 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvContentAbout" />
-
-            <ImageView
-                android:id="@+id/ivAddSkill"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:clickable="true"
-                android:contentDescription="@string/app_name"
-                android:focusable="true"
-                android:src="@drawable/add"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tvSkill" />
+                app:layout_constraintTop_toBottomOf="@id/tvSummary" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcvSkill"
@@ -200,4 +178,13 @@
 
     </androidx.core.widget.NestedScrollView>
 
+    <Button
+        android:id="@+id/btHireFreelancer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/blue"
+        android:text="Hire Freelancer"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,8 @@ package com.example.wolny.Model;
 public class Bid {
     String jobId;
     String freelancerID;
+    String freelancerName;
+    String freelancerAvatar;
     String description;
     String time;
     String budget;
@@ -11,9 +13,11 @@ public class Bid {
 
     }
 
-    public Bid(String jobId, String freelancerID, String description, String time, String budget) {
+    public Bid(String jobId, String freelancerID, String freelancerName, String freelancerAvatar, String description, String time, String budget) {
         this.jobId = jobId;
         this.freelancerID = freelancerID;
+        this.freelancerName = freelancerName;
+        this.freelancerAvatar = freelancerAvatar;
         this.description = description;
         this.time = time;
         this.budget = budget;
@@ -57,5 +61,21 @@ public class Bid {
 
     public void setBudget(String budget) {
         this.budget = budget;
+    }
+
+    public String getFreelancerName() {
+        return freelancerName;
+    }
+
+    public void setFreelancerName(String freelancerName) {
+        this.freelancerName = freelancerName;
+    }
+
+    public String getFreelancerAvatar() {
+        return freelancerAvatar;
+    }
+
+    public void setFreelancerAvatar(String freelancerAvatar) {
+        this.freelancerAvatar = freelancerAvatar;
     }
 }

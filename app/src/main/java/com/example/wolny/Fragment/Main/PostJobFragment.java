@@ -55,7 +55,7 @@ public class PostJobFragment extends Fragment{
         cvWebsite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("category", "Website");
+                intent.putExtra("category", "Website & IT");
                 startActivity(intent);
             }
         });
@@ -87,7 +87,7 @@ public class PostJobFragment extends Fragment{
         cvDataEntry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("category", "Data entry");
+                intent.putExtra("category", "Data Entry");
                 startActivity(intent);
             }
         });
@@ -96,7 +96,7 @@ public class PostJobFragment extends Fragment{
         cvSoftwareDevelopment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("category", "Software development");
+                intent.putExtra("category", "Software Development");
                 startActivity(intent);
             }
         });
@@ -122,7 +122,7 @@ public class PostJobFragment extends Fragment{
         cvLocalJob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("category", "Local job");
+                intent.putExtra("category", "Local Job");
                 startActivity(intent);
             }
         });
@@ -130,7 +130,7 @@ public class PostJobFragment extends Fragment{
         cvOther.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.putExtra("category", "Other");
+                intent.putExtra("category", "Others");
                 startActivity(intent);
             }
         });

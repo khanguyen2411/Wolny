@@ -19,9 +19,11 @@ public class SkillAdapter extends RecyclerView.Adapter<SkillAdapter.SkillViewHol
     Context mContext;
     private List<String> skills;
     private final CurrentSkillAdapter currentSkillAdapter;
-    public SkillAdapter(Context mContext, CurrentSkillAdapter currentSkillAdapter) {
+    RecyclerView recyclerView;
+    public SkillAdapter(Context mContext, CurrentSkillAdapter currentSkillAdapter, RecyclerView recyclerView) {
         this.mContext = mContext;
         this.currentSkillAdapter = currentSkillAdapter;
+        this.recyclerView = recyclerView;
     }
 
     public void setList(List<String> skills) {
@@ -40,13 +42,11 @@ public class SkillAdapter extends RecyclerView.Adapter<SkillAdapter.SkillViewHol
     @Override
     public void onBindViewHolder(@NonNull SkillViewHolder holder, int position) {
         holder.tvSkill.setText(skills.get(position));
-        holder.setItemClickListener(new IMain.ItemClickListener() {
-            @Override
-            public void onClick(View view, int position, boolean isLongClick) {
-                if(!CurrentSkillAdapter.skills.contains(skills.get(position))){
-                    CurrentSkillAdapter.skills.add(skills.get(position));
-                    currentSkillAdapter.setList(CurrentSkillAdapter.skills);
-                }
+        holder.setItemClickListener((view, position1, isLongClick) -> {
+            if(!CurrentSkillAdapter.skills.contains(skills.get(position1))){
+                CurrentSkillAdapter.skills.add(skills.get(position1));
+                currentSkillAdapter.setList(CurrentSkillAdapter.skills);
+                recyclerView.scrollToPosition(CurrentSkillAdapter.skills.size() - 1);
             }
         });
     }

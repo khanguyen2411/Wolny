@@ -27,6 +27,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.wolny.Adapter.Profile.SkillAdapter;
 import com.example.wolny.R;
 import com.github.dhaval2404.imagepicker.ImagePicker;
@@ -105,7 +106,7 @@ public class ProfileActivity extends AppCompatActivity {
                 tvContentAbout.setText(summary);
 
                 if (!imageUrl.equals("default")){
-                    Picasso.get().load(imageUrl).into(ivProfile);
+                    Glide.with(getBaseContext()).load(imageUrl).into(ivProfile);
                 }
             }
 

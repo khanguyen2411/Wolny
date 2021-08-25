@@ -4,6 +4,10 @@ import android.view.View;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.wolny.Model.User;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+
 public interface IMain {
     interface ISignUp{
         void onSuccessful();
@@ -29,6 +33,19 @@ public interface IMain {
 
     interface ItemClickListener {
         void onClick(View view, int position,boolean isLongClick);
+    }
+
+    interface IJobDetails{
+        void getBid();
+        void placeBid();
+        void onSuccessful(String msg);
+        void onFailure(String msg);
+    }
+
+    interface OnGetDataListener {
+        public void onStart();
+        public void onSuccess(User user);
+        public void onFailed(DatabaseError databaseError);
     }
 
 }

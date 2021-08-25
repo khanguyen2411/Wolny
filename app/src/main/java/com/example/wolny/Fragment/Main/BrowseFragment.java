@@ -12,9 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wolny.Adapter.Main.Browse.CategoryAdapter;
-import com.example.wolny.Adapter.Main.Browse.PopularJobAdapter;
+import com.example.wolny.Adapter.Main.Browse.JobAdapter;
 import com.example.wolny.Model.Job;
 import com.example.wolny.R;
+import com.example.wolny.Utils.Constraint;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,14 +27,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Random;
 
 public class BrowseFragment extends Fragment {
 
     View mView;
     RecyclerView rvPopularJob, rvCategory;
     DatabaseReference mDatabase;
-    int size, start, end;
     String uid;
     List<Job> list;
 
@@ -75,7 +74,7 @@ public class BrowseFragment extends Fragment {
         titles.add("Sales");
         titles.add("Business");
         titles.add("Local Job");
-        titles.add("Other");
+        titles.add("Others");
 
         images.add(R.drawable.category_website);
         images.add(R.drawable.category_mobile);
@@ -96,14 +95,14 @@ public class BrowseFragment extends Fragment {
     }
 
     private void setupPopularJobRecyclerView() {
-        PopularJobAdapter adapter = new PopularJobAdapter(requireActivity());
+        JobAdapter adapter = new JobAdapter(requireActivity());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         rvPopularJob.setLayoutManager(linearLayoutManager);
         rvPopularJob.setNestedScrollingEnabled(true);
         rvPopularJob.setAdapter(adapter);
 
 
-        Query query = mDatabase.child("Jobs").limitToFirst(3);
+        Query query = Constraint.mDatabase.child("Jobs").limitToFirst(3);
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

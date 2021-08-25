@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.JobDetailActivity">
+    tools:context=".Activity.JobDetailActivity"
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glVer01"
@@ -179,7 +180,7 @@
                 android:id="@+id/tvTotalBid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Total bid (0)"
+                android:text="Bids"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />

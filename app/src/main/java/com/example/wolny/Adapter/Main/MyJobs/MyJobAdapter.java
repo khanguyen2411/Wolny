@@ -1,6 +1,8 @@
 package com.example.wolny.Adapter.Main.MyJobs;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.wolny.Activity.JobDetailActivity;
 import com.example.wolny.IMain;
 import com.example.wolny.Model.Job;
 import com.example.wolny.R;
@@ -49,7 +52,11 @@ public class MyJobAdapter extends RecyclerView.Adapter<MyJobAdapter.MyJobViewHol
         holder.setItemClickListener(new IMain.ItemClickListener() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
-
+                Intent intent = new Intent(mContext, JobDetailActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("job", list.get(position));
+                intent.putExtra("bundle", bundle);
+                mContext.startActivity(intent);
             }
         });
     }

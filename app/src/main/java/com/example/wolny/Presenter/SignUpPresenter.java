@@ -2,6 +2,7 @@ package com.example.wolny.Presenter;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.telephony.TelephonyManager;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
@@ -20,9 +21,11 @@ public class SignUpPresenter {
     IMain.ISignUp iSignUp;
     private ProgressDialog progressDialog;
     private DatabaseReference mDatabase;
+    Context mContext;
 
-    public SignUpPresenter(IMain.ISignUp iSignUp) {
+    public SignUpPresenter(IMain.ISignUp iSignUp, Context mContext) {
         this.iSignUp = iSignUp;
+        this.mContext = mContext;
     }
 
     public void signUp(FirebaseAuth auth, EditText etUsername, EditText etEmail, EditText etPassword, Context context) {
@@ -71,7 +74,10 @@ public class SignUpPresenter {
                         String uid = currentUser.getUid();
                         mDatabase = FirebaseDatabase.getInstance("https://wolny-b8ffa-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
 
-                        User user = new User(uid, username, "default", "I'm a perfect freelancer", "");
+                        TelephonyManager tm = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+                        String countryCodeValue = tm.getNetworkCountryIso();
+
+                        User user = new User(uid, username, "default", "I'm a perfect freelancer", "", countryCodeValue);
 
                         mDatabase.child("Users").child(uid).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override

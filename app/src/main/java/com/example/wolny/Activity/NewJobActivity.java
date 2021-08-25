@@ -16,11 +16,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.wolny.Model.Job;
+import com.example.wolny.Model.User;
 import com.example.wolny.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.UUID;
 
@@ -32,6 +36,8 @@ public class NewJobActivity extends AppCompatActivity {
     String projectType, currency, category;
     Button btPostProject;
     ImageView ivBack;
+    DatabaseReference databaseReference;
+    String country = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +55,20 @@ public class NewJobActivity extends AppCompatActivity {
         UUID uuid = UUID.randomUUID();
         String uuidAsString = uuid.toString().replace("-", "");
         String employerID = getIntent().getExtras().getString("uid");
+        databaseReference = FirebaseDatabase.getInstance("https://wolny-b8ffa-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
+
+        databaseReference.child("Users").child(employerID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User user = snapshot.getValue(User.class);
+                country = user.getCountry();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,14 +84,12 @@ public class NewJobActivity extends AppCompatActivity {
                 if (invalidate()) {
                     progressDialog.show();
 
-                    Job job = new Job(uuidAsString, employerID, "", category,
+                    Job job = new Job(uuidAsString, employerID, "", country, category,
                             etTitle.getText().toString(),
                             etDescription.getText().toString(), projectType,
                             etBudget.getText().toString(), etSkillRequired.getText().toString(),
                             "open", currency,
                             etTime.getText().toString());
-
-                    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://wolny-b8ffa-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference();
 
                     databaseReference.child("Jobs").child(uuidAsString).setValue(job).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -110,7 +128,7 @@ public class NewJobActivity extends AppCompatActivity {
                 return false;
             }
         }
-        if(etTime.getText().toString().isEmpty()){
+        if (etTime.getText().toString().isEmpty()) {
             etTime.setError("Time required");
             return false;
         }

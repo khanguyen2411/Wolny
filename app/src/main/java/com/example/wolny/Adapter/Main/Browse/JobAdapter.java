@@ -18,12 +18,12 @@ import com.example.wolny.R;
 
 import java.util.List;
 
-public class PopularJobAdapter extends RecyclerView.Adapter<PopularJobAdapter.PopularJobViewHolder> {
+public class JobAdapter extends RecyclerView.Adapter<JobAdapter.PopularJobViewHolder> {
 
     Context mContext;
     List<Job> list;
 
-    public PopularJobAdapter(Context mContext){
+    public JobAdapter(Context mContext){
         this.mContext = mContext;
     }
 

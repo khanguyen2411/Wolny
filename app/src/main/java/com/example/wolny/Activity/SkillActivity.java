@@ -148,9 +148,8 @@ public class SkillActivity extends AppCompatActivity{
         rcvCurrentSkill.setLayoutManager(linearLayoutManager1);
         rcvCurrentSkill.setAdapter(currentSkillAdapter);
 
-
         //list skill adapter
-        skillAdapter = new SkillAdapter(this, currentSkillAdapter);
+        skillAdapter = new SkillAdapter(this, currentSkillAdapter, rcvCurrentSkill);
         skillAdapter.setList(initList());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);

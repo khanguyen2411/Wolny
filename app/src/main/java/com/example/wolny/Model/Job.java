@@ -6,6 +6,7 @@ public class Job implements Serializable {
     String jobID;
     String employerID;
     String freelancerID;
+    String country;
     String category;
     String title;
     String description;
@@ -19,10 +20,11 @@ public class Job implements Serializable {
     public Job() {
     }
 
-    public Job(String jobID, String employerID, String freelancerID, String category, String title, String description, String type, String budget, String skillRequired, String status, String currency, String time) {
+    public Job(String jobID, String employerID, String freelancerID, String country, String category, String title, String description, String type, String budget, String skillRequired, String status, String currency, String time) {
         this.jobID = jobID;
         this.employerID = employerID;
         this.freelancerID = freelancerID;
+        this.country = country;
         this.category = category;
         this.title = title;
         this.description = description;
@@ -128,5 +130,13 @@ public class Job implements Serializable {
 
     public void setJobID(String jobID) {
         this.jobID = jobID;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }
