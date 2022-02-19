@@ -13,14 +13,14 @@
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05" />
+        app:layout_constraintGuide_percent="0.03" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glVer02"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95" />
+        app:layout_constraintGuide_percent="0.97" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glHor01"
@@ -55,7 +55,49 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.50" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor06"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor07"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.47" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor08"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.60" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor09"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor10"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.73" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor11"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.83" />
 
     <LinearLayout
         android:id="@+id/llProfile"
@@ -77,15 +119,12 @@
             android:layout_weight="1.8">
 
             <ImageView
-                android:visibility="invisible"
                 android:id="@+id/ivProfile"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_gravity="start"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/user_icon" />
+                android:layout_gravity="center"
+                android:contentDescription="@string/app_name" />
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="0dp"
@@ -95,7 +134,6 @@
             android:weightSum="3">
 
             <TextView
-                android:visibility="invisible"
                 android:id="@+id/tvUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -127,17 +165,6 @@
             app:tint="@color/blue" />
     </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/progress_circular"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginBottom="10dp"
-        android:indeterminate="true"
-        android:indeterminateTint="@color/blue"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/glHor01"
-        app:layout_constraintEnd_toEndOf="@id/glVer02"
-        app:layout_constraintStart_toStartOf="@id/glVer01" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -294,6 +321,239 @@
     </LinearLayout>
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:textColor="@color/blue"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor07" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1"
+        app:layout_constraintEnd_toEndOf="@id/glVer02"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor05">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_weight="0.95"
+                android:orientation="vertical"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:letterSpacing="0.05"
+                    android:text="App verson"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:gravity="bottom"
+                    android:letterSpacing="0.05"
+                    android:text="1.0.0 (Beta)"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_color" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1"
+        app:layout_constraintEnd_toEndOf="@id/glVer02"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor08">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_weight="0.95"
+                android:orientation="vertical"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:letterSpacing="0.05"
+                    android:text="Walkthrough"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:gravity="bottom"
+                    android:letterSpacing="0.05"
+                    android:text="Learn more about the app"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.05"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitEnd"
+                android:src="@drawable/right_arrow"
+                app:tint="@color/blue" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_color" />
+    </LinearLayout>
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Other"
+        android:textColor="@color/blue"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor09" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1"
+        app:layout_constraintEnd_toEndOf="@id/glVer02"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_weight="0.95"
+                android:orientation="vertical"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:letterSpacing="0.05"
+                    android:text="Privacy Policy"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:gravity="bottom"
+                    android:letterSpacing="0.05"
+                    android:text="Open our privacy policy"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_color" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1"
+        app:layout_constraintEnd_toEndOf="@id/glVer02"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor11">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_weight="0.95"
+                android:orientation="vertical"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:letterSpacing="0.05"
+                    android:text="Terms and Conditions"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:gravity="bottom"
+                    android:letterSpacing="0.05"
+                    android:text="Opens our teams and conditions page"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_color" />
+    </LinearLayout>
+
+    <TextView
         android:id="@+id/tvLogOut"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -308,6 +568,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/glVer02"
         app:layout_constraintStart_toStartOf="@id/glVer01"
-        app:layout_constraintTop_toTopOf="@id/glHor05" />
+        app:layout_constraintTop_toTopOf="@id/glHor06" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

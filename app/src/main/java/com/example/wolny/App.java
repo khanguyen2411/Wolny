@@ -10,4 +10,9 @@ public class App extends Application {
         FirebaseDatabase.getInstance("https://wolny-b8ffa-default-rtdb.asia-southeast1.firebasedatabase.app/").setPersistenceEnabled(true);
         super.onCreate();
     }
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+    }
 }

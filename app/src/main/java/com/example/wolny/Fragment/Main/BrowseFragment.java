@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -95,12 +96,13 @@ public class BrowseFragment extends Fragment {
     }
 
     private void setupPopularJobRecyclerView() {
-        JobAdapter adapter = new JobAdapter(requireActivity());
+        JobAdapter adapter = new JobAdapter(requireActivity(), mDatabase, list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rvPopularJob.getContext(), linearLayoutManager.getOrientation());
+        rvPopularJob.addItemDecoration(dividerItemDecoration);
         rvPopularJob.setLayoutManager(linearLayoutManager);
         rvPopularJob.setNestedScrollingEnabled(true);
         rvPopularJob.setAdapter(adapter);
-
 
         Query query = Constraint.mDatabase.child("Jobs").limitToFirst(3);
         query.addValueEventListener(new ValueEventListener() {
@@ -109,7 +111,7 @@ public class BrowseFragment extends Fragment {
                 list = new ArrayList<>();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     Job job = dataSnapshot.getValue(Job.class);
-                    if (job != null && !job.getEmployerID().equals(uid)) {
+                    if (job != null && !job.getEmployerID().equals(uid) && job.getStatus().equals("open")) {
                         list.add(job);
                     }
                     if(list.size() == 3){

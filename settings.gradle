@@ -1,2 +1,3 @@
+include ':HERE-sdk'
 include ':app'
 rootProject.name = "Wolny"

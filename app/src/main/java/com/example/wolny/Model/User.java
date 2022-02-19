@@ -9,17 +9,27 @@ public class User {
     String summary;
     String skills;
     String country;
+    String status;
 
-    public User(String userID, String username, String profileImage, String summary, String skills, String country) {
+    public User(String userID, String username, String profileImage, String summary, String skills, String country, String status) {
         this.userID = userID;
         this.username = username;
         this.profileImage = profileImage;
         this.summary = summary;
         this.skills = skills;
         this.country = country;
+        this.status = status;
     }
 
     public User() {
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getUsername() {

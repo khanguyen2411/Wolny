@@ -77,7 +77,7 @@ public class SignUpPresenter {
                         TelephonyManager tm = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
                         String countryCodeValue = tm.getNetworkCountryIso();
 
-                        User user = new User(uid, username, "default", "I'm a perfect freelancer", "", countryCodeValue);
+                        User user = new User(uid, username, "default", "I'm a perfect freelancer", "", countryCodeValue, "offline");
 
                         mDatabase.child("Users").child(uid).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override

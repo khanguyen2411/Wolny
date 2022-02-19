@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.07" />
+        app:layout_constraintGuide_percent="0.06" />
 
     <ImageView
         android:id="@+id/ivBack"
@@ -59,11 +59,62 @@
         app:layout_constraintStart_toEndOf="@id/ivBack"
         app:layout_constraintTop_toTopOf="@id/ivBack" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvListJob"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/glVer02"
         app:layout_constraintStart_toStartOf="@id/glVer01"
-        app:layout_constraintTop_toBottomOf="@id/glHor02" />
+        app:layout_constraintTop_toBottomOf="@id/glHor02">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListJob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/blue"
+        android:indeterminateTintMode="src_atop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/llQuote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/glVer02"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:fontFamily="@font/roboto_italic"
+            android:text="Không có việc gì khó, chỉ cần mình không làm"
+            android:textAlignment="center"
+            android:textColor="#9F000000" />
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_italic"
+            android:text="-Khuyết danh"
+            android:textColor="#AE000000"
+            android:textStyle="bold" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

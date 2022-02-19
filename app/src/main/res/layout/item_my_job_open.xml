@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="10dp"
     android:background="@color/white"
-    android:layout_marginBottom="10dp">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:cardElevation="0dp">
 
     <LinearLayout
-        android:weightSum="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:baselineAligned="false"
         android:orientation="horizontal"
-        android:baselineAligned="false">
+        android:weightSum="1">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -29,9 +31,9 @@
                 android:textStyle="bold" />
 
             <LinearLayout
-                android:layout_marginTop="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -56,25 +58,25 @@
 
             <TextView
                 android:id="@+id/tvNumberOfBids"
-                android:layout_marginTop="10dp"
-                android:text=" 0 bids"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text=" 0 bids" />
 
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_weight="0.15"
+            android:gravity="center"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
-            android:id="@+id/tvCategory"
-            android:textStyle="bold"
-            android:textColor="#FF0000"
-            android:gravity="center"
-            android:layout_weight="0.15"
             android:text="Software Development"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"/>
+            android:textColor="#FF0000"
+            android:textStyle="bold" />
     </LinearLayout>
 
 

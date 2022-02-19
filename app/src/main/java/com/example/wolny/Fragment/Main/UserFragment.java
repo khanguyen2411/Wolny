@@ -77,7 +77,7 @@ public class UserFragment extends Fragment implements IMain.ISetQuote {
                 String imageUrl = Objects.requireNonNull(snapshot.child("profileImage").getValue()).toString();
 
                 if (!imageUrl.equals("default")) {
-                    Glide.with(getActivity()).load(imageUrl).into(ivProfile);
+                    Picasso.get().load(imageUrl).placeholder(R.drawable.progress_bar).into(ivProfile);
                 }
             }
 
@@ -86,16 +86,6 @@ public class UserFragment extends Fragment implements IMain.ISetQuote {
 
             }
         });
-
-        Handler handler = new Handler(Looper.myLooper());
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                progressBar.setVisibility(View.GONE);
-                ivProfile.setVisibility(View.VISIBLE);
-                tvUsername.setVisibility(View.VISIBLE);
-            }
-        }, 1000);
 
         tvLogOut.setOnClickListener(new View.OnClickListener() {
             @Override

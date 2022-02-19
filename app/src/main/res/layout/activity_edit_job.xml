@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.EditJobActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glVer01"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glVer02"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor04"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.19" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor05"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor06"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor07"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.38" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor08"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.41" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor09"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.46" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.49" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.57" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.68" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHor14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.71" />
+
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:focusable="true"
+        android:src="@drawable/left_arrow"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toTopOf="@id/glHor01"
+        app:tint="@color/blue" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Update project"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/ivBack"
+        app:layout_constraintStart_toEndOf="@id/ivBack"
+        app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Category: "
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="italic|bold"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor02" />
+
+    <TextView
+        android:id="@+id/tvCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/roboto_light"
+        android:text="Website"
+        android:textColor="@color/blue"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toEndOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Title"
+        android:textColor="@color/blue"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor03" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:backgroundTint="@color/blue"
+        android:hint="What do you need done?"
+        android:inputType="textMultiLine"
+        android:maxLength="50"
+        android:paddingHorizontal="15dp"
+        android:paddingBottom="15dp"
+        android:textCursorDrawable="@drawable/color_cursor_edit_text"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@id/glVer02"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor04" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Description"
+        android:textColor="@color/blue"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor05" />
+
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:backgroundTint="@color/blue"
+        android:hint="Add more details"
+        android:inputType="text"
+        android:paddingHorizontal="15dp"
+        android:paddingBottom="15dp"
+        android:textCursorDrawable="@drawable/color_cursor_edit_text"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@id/glVer02"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor06" />
+
+    <TextView
+        android:id="@+id/tvProjectType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Project type"
+        android:textColor="@color/blue"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor07" />
+
+    <Spinner
+        android:id="@+id/spProjectType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:text="Fixed Price"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor08" />
+
+    <Button
+        android:id="@+id/btUpdateProject"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/blue"
+        android:text="Update project"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBudget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Budget"
+        android:textColor="@color/blue"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor09" />
+
+    <EditText
+        android:id="@+id/etBudget"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:backgroundTint="@color/blue"
+        android:hint="0"
+        android:inputType="numberDecimal"
+        android:paddingHorizontal="15dp"
+        android:paddingBottom="15dp"
+        android:textAlignment="center"
+        android:textCursorDrawable="@drawable/color_cursor_edit_text"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toTopOf="@id/glHor10" />
+
+    <TextView
+        android:id="@+id/tvPerHour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/roboto_bold"
+        android:letterSpacing="0.1"
+        android:text="/hour"
+        android:textColor="@color/blue"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/etBudget"
+        app:layout_constraintStart_toEndOf="@id/etBudget"
+        app:layout_constraintTop_toTopOf="@id/etBudget" />
+
+
+    <Spinner
+        android:id="@+id/spCurrency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:backgroundTint="@color/blue"
+        android:text="Fixed Price"
+        app:layout_constraintBottom_toBottomOf="@id/tvPerHour"
+        app:layout_constraintStart_toEndOf="@id/etBudget"
+        app:layout_constraintTop_toTopOf="@id/tvPerHour" />
+
+    <TextView
+        android:id="@+id/SkillRequired"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Skills required"
+        android:textColor="@color/blue"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor11" />
+
+    <EditText
+        android:id="@+id/etSkillRequired"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:backgroundTint="@color/blue"
+        android:hint="Skills need for job"
+        android:inputType="textMultiLine"
+        android:paddingHorizontal="15dp"
+        android:paddingBottom="15dp"
+        android:textCursorDrawable="@drawable/color_cursor_edit_text"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@id/glVer02"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor12" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Time"
+        android:textColor="@color/blue"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor13" />
+
+    <EditText
+        android:id="@+id/etTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:backgroundTint="@color/blue"
+        android:hint="Time to complete job"
+        android:inputType="text"
+        android:paddingHorizontal="15dp"
+        android:paddingBottom="15dp"
+        android:textCursorDrawable="@drawable/color_cursor_edit_text"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@id/glVer02"
+        app:layout_constraintStart_toStartOf="@id/glVer01"
+        app:layout_constraintTop_toBottomOf="@id/glHor14" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

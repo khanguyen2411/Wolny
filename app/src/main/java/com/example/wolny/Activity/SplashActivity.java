@@ -8,6 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,7 @@ import java.io.IOException;
 
 public class SplashActivity extends AppCompatActivity {
 
+    ImageView ivLogo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,13 +29,15 @@ public class SplashActivity extends AppCompatActivity {
         g.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         setContentView(R.layout.activity_splash);
 
+        ivLogo = findViewById(R.id.ivLogo);
+
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.fadein);
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
-        findViewById(R.id.ivLogo).startAnimation(animation);
+        ivLogo.startAnimation(animation);
 
         Intent intent;
 
@@ -53,7 +57,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if(!isOnline()){
-                    Toast.makeText(getBaseContext(), "Please check the connection", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getBaseContext(), "Please check the connection", Toast.LENGTH_LONG).show();
                 }
                 startActivity(intent);
                 finish();
@@ -72,7 +76,6 @@ public class SplashActivity extends AppCompatActivity {
         }
 
         return false;
-
     }
 
 }

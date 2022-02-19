@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -32,6 +33,7 @@ public class ListFragment extends Fragment {
     View mView;
     String as, status, uid;
     RecyclerView rvListJob;
+    ImageView ivEmptyList;
     DatabaseReference mDatabase;
     List<Job> list;
 
@@ -46,9 +48,10 @@ public class ListFragment extends Fragment {
         mView = inflater.inflate(R.layout.fragment_list, container, false);
 
         rvListJob = mView.findViewById(R.id.rvListJob);
+        ivEmptyList =mView.findViewById(R.id.ivEmptyList);
         getArgs();
 
-        MyJobAdapter adapter = new MyJobAdapter(getContext());
+        MyJobAdapter adapter = new MyJobAdapter(getActivity(), uid, mDatabase, as);
         adapter.setList(list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         rvListJob.setLayoutManager(linearLayoutManager);
@@ -60,12 +63,21 @@ public class ListFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list = new ArrayList<>();
                 for (DataSnapshot jobSnapShot : snapshot.getChildren()) {
-                    // TODO: handle the post
+//                     TODO: handle the post
                     Job job = jobSnapShot.getValue(Job.class);
                     list.add(job);
                 }
-
-                adapter.setList(processList());
+                list = processList();
+                if(list.size() == 0){
+                    rvListJob.setVisibility(View.INVISIBLE);
+                    ivEmptyList.setVisibility(View.VISIBLE);
+                    if(as.equals("freelancer")){
+                        ivEmptyList.setImageResource(R.drawable.freelancer_my_job_image);
+                    } else {
+                        ivEmptyList.setImageResource(R.drawable.employer_my_job_image);
+                    }
+                }
+                adapter.setList(list);
             }
 
             @Override

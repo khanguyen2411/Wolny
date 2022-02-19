@@ -37,7 +37,7 @@ public class NewJobActivity extends AppCompatActivity {
     Button btPostProject;
     ImageView ivBack;
     DatabaseReference databaseReference;
-    String country = "";
+    String country = "", employerName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +61,9 @@ public class NewJobActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
+                assert user != null;
                 country = user.getCountry();
+                employerName = user.getUsername();
             }
 
             @Override
@@ -84,7 +86,7 @@ public class NewJobActivity extends AppCompatActivity {
                 if (invalidate()) {
                     progressDialog.show();
 
-                    Job job = new Job(uuidAsString, employerID, "", country, category,
+                    Job job = new Job(uuidAsString, employerID, employerName, "", "",country, category,
                             etTitle.getText().toString(),
                             etDescription.getText().toString(), projectType,
                             etBudget.getText().toString(), etSkillRequired.getText().toString(),
@@ -147,7 +149,6 @@ public class NewJobActivity extends AppCompatActivity {
         etTime = findViewById(R.id.etTime);
         btPostProject = findViewById(R.id.btPostProject);
         ivBack = findViewById(R.id.ivBack);
-
     }
 
     void setUpSpinner() {

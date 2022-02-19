@@ -106,7 +106,7 @@ public class ProfileActivity extends AppCompatActivity {
                 tvContentAbout.setText(summary);
 
                 if (!imageUrl.equals("default")){
-                    Glide.with(getBaseContext()).load(imageUrl).into(ivProfile);
+                    Glide.with(getBaseContext()).load(imageUrl).placeholder(R.drawable.progress_bar).into(ivProfile);
                 }
             }
 

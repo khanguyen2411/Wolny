@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wolny"
-    android:requestLegacyExternalStorage="true">
+    android:requestLegacyExternalStorage="true"
+    android:hardwareAccelerated="true">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -16,7 +19,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Wolny">
-        <activity android:name=".Activity.AnotherProfileActivity"></activity>
+        <meta-data android:name="com.here.android.maps.appid" android:value="1ZKvBl41bbE6jiGsilPK"/>
+        <meta-data android:name="com.here.android.maps.apptoken" android:value="JMHAZ3NQiydns4YDl6KMfg"/>
+        <activity android:name=".Activity.EditJobActivity"></activity>
+        <activity android:name=".Activity.ChatActivity" />
+        <activity
+            android:name=".Activity.AnotherProfileActivity"
+            android:parentActivityName=".Activity.JobDetailActivity" />
         <activity android:name=".Activity.CategoryActivity" />
         <activity
             android:name=".Activity.JobDetailActivity"

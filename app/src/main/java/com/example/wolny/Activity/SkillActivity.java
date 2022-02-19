@@ -18,7 +18,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wolny.Adapter.AddSkill.CurrentSkillAdapter;
 import com.example.wolny.Adapter.AddSkill.SkillAdapter;
-
 import com.example.wolny.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,9 +26,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
-public class SkillActivity extends AppCompatActivity{
+public class SkillActivity extends AppCompatActivity {
 
     ImageView ivBack;
     SearchView searchView;
@@ -47,7 +47,7 @@ public class SkillActivity extends AppCompatActivity{
         mapping();
 
         String s = getIntent().getExtras().getString("skills").trim();
-        if(s.isEmpty()){
+        if (s.isEmpty()) {
             currentSkills = new ArrayList<>();
         } else {
             currentSkills = new ArrayList<>(Arrays.asList(s.split(", ")));
@@ -82,7 +82,7 @@ public class SkillActivity extends AppCompatActivity{
                 mDatabase.child("Users").child(uid).child("skills").setValue(newSkill.trim()).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             Toast.makeText(getBaseContext(), "Successfully!!", Toast.LENGTH_SHORT).show();
                             onBack();
                         } else {
@@ -94,10 +94,11 @@ public class SkillActivity extends AppCompatActivity{
         });
     }
 
-    public void onBack(){
+    public void onBack() {
         onBackPressed();
         finish();
     }
+
     private List<String> initList() {
         List<String> list = new ArrayList<>();
 
@@ -108,7 +109,25 @@ public class SkillActivity extends AppCompatActivity{
         list.add("2D Animation");
         list.add("Flutter");
         list.add("React Native");
-
+        list.add("HTML/CSS");
+        list.add("jQuery");
+        list.add("Version Control");
+        list.add("Xamarin");
+        list.add("2D Game Ard");
+        list.add("Academic Writing");
+        list.add("Web Page Writer");
+        list.add("AJAX");
+        list.add("JavaFX");
+        list.add("Spring Boot");
+        list.add("Java Swing");
+        list.add("Adobe Illustrator");
+        list.add("Adobe Photoshop");
+        list.add("Blender");
+        list.add("Paint");
+        list.add("PowerPoint");
+        list.add("Excel");
+        list.add("Word");
+        Collections.sort(list);
         return list;
     }
 
@@ -139,7 +158,7 @@ public class SkillActivity extends AppCompatActivity{
     }
 
 
-    public void setupAdapter(){
+    public void setupAdapter() {
         //current skill adapter
         currentSkillAdapter = new CurrentSkillAdapter(this);
         currentSkillAdapter.setList(currentSkills);
@@ -157,10 +176,9 @@ public class SkillActivity extends AppCompatActivity{
         recyclerView.setAdapter(skillAdapter);
 
 
-
     }
 
-    void setupSearchView(){
+    void setupSearchView() {
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
 

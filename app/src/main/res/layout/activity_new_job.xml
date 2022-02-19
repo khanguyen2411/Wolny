@@ -11,14 +11,14 @@
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05" />
+        app:layout_constraintGuide_percent="0.03" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glVer02"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95" />
+        app:layout_constraintGuide_percent="0.97" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glHor01"
@@ -182,13 +182,14 @@
     <EditText
         android:id="@+id/etName"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:autofillHints=""
         android:backgroundTint="@color/blue"
         android:hint="What do you need done?"
         android:inputType="text"
         android:maxLength="50"
         android:paddingHorizontal="15dp"
+        android:paddingBottom="15dp"
         android:textCursorDrawable="@drawable/color_cursor_edit_text"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@id/glVer02"
@@ -210,12 +211,13 @@
     <EditText
         android:id="@+id/etDescription"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:autofillHints=""
         android:backgroundTint="@color/blue"
         android:hint="Add more details"
-        android:inputType="textMultiLine"
+        android:inputType="text"
         android:paddingHorizontal="15dp"
+        android:paddingBottom="15dp"
         android:textCursorDrawable="@drawable/color_cursor_edit_text"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@id/glVer02"
@@ -265,33 +267,35 @@
         app:layout_constraintTop_toBottomOf="@id/glHor09" />
 
     <EditText
-        android:hint="0"
         android:id="@+id/etBudget"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
         android:backgroundTint="@color/blue"
+        android:hint="0"
         android:inputType="numberDecimal"
+        android:paddingHorizontal="15dp"
+        android:paddingBottom="15dp"
         android:textAlignment="center"
         android:textCursorDrawable="@drawable/color_cursor_edit_text"
         app:layout_constraintStart_toStartOf="@id/glVer01"
-        app:layout_constraintTop_toTopOf="@id/glHor10"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="@id/glHor10" />
 
     <TextView
-        android:letterSpacing="0.1"
         android:id="@+id/tvPerHour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:fontFamily="@font/roboto_bold"
+        android:letterSpacing="0.1"
         android:text="/hour"
         android:textColor="@color/blue"
         android:textSize="15sp"
         android:textStyle="bold"
         android:visibility="invisible"
-        app:layout_constraintTop_toTopOf="@id/etBudget"
         app:layout_constraintBottom_toBottomOf="@id/etBudget"
-        app:layout_constraintStart_toEndOf="@id/etBudget" />
+        app:layout_constraintStart_toEndOf="@id/etBudget"
+        app:layout_constraintTop_toTopOf="@id/etBudget" />
 
 
     <Spinner
@@ -301,9 +305,9 @@
         android:layout_marginStart="70dp"
         android:backgroundTint="@color/blue"
         android:text="Fixed Price"
-        app:layout_constraintTop_toTopOf="@id/tvPerHour"
         app:layout_constraintBottom_toBottomOf="@id/tvPerHour"
-        app:layout_constraintStart_toEndOf="@id/etBudget" />
+        app:layout_constraintStart_toEndOf="@id/etBudget"
+        app:layout_constraintTop_toTopOf="@id/tvPerHour" />
 
     <TextView
         android:id="@+id/SkillRequired"
@@ -320,12 +324,13 @@
     <EditText
         android:id="@+id/etSkillRequired"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:autofillHints=""
         android:backgroundTint="@color/blue"
-        android:hint="Skill need for job"
+        android:hint="Skills need for job"
         android:inputType="textMultiLine"
         android:paddingHorizontal="15dp"
+        android:paddingBottom="15dp"
         android:textCursorDrawable="@drawable/color_cursor_edit_text"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@id/glVer02"
@@ -347,12 +352,13 @@
     <EditText
         android:id="@+id/etTime"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:autofillHints=""
         android:backgroundTint="@color/blue"
         android:hint="Time to complete job"
         android:inputType="text"
         android:paddingHorizontal="15dp"
+        android:paddingBottom="15dp"
         android:textCursorDrawable="@drawable/color_cursor_edit_text"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@id/glVer02"

@@ -14,7 +14,7 @@
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.05" />
+            app:layout_constraintGuide_percent="0.03" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline02"
@@ -35,10 +35,10 @@
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.95" />
+            app:layout_constraintGuide_percent="0.97" />
 
         <ImageView
-            android:tint="@color/blue"
+            app:tint="@color/blue"
             android:id="@+id/ivBack"
             android:layout_width="25dp"
             android:layout_height="25dp"

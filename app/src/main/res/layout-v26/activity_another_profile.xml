@@ -62,19 +62,26 @@
         app:layout_constraintTop_toTopOf="@id/glHor03"
         app:tint="@color/white" />
 
-    <ImageView
-        android:id="@+id/ivProfile"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_margin="1dp"
-        android:background="@drawable/bg_image_profile"
-        android:clickable="true"
-        android:contentDescription="@string/app_name"
-        android:focusable="true"
-        android:scaleType="center"
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@id/glHor01"
         app:layout_constraintStart_toStartOf="@id/glVer01"
-        app:layout_constraintTop_toTopOf="@id/glHor01" />
+        app:layout_constraintTop_toTopOf="@id/glHor01"
+        app:cardCornerRadius="2dp">
+
+        <ImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="1dp"
+            android:background="@drawable/bg_image_profile"
+            android:clickable="true"
+            android:contentDescription="@string/app_name"
+            android:focusable="true"
+            android:scaleType="center"
+            android:src="@drawable/milky_way" />
+    </androidx.cardview.widget.CardView>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
@@ -156,29 +163,12 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/tvSkill" />
 
-            <TextView
-                android:id="@+id/tvReview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="Reviews"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rcvSkill" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcvReview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/tvReview" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
 
     <Button
+        android:textSize="15sp"
         android:id="@+id/btHireFreelancer"
         android:layout_width="match_parent"
         android:layout_height="50dp"

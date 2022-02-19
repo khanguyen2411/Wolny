@@ -1,7 +1,11 @@
 package com.example.wolny.Model;
 
-public class Bid {
+import java.io.Serializable;
+import java.util.Objects;
+
+public class Bid implements Serializable {
     String jobId;
+    String employerID;
     String freelancerID;
     String freelancerName;
     String freelancerAvatar;
@@ -13,14 +17,23 @@ public class Bid {
 
     }
 
-    public Bid(String jobId, String freelancerID, String freelancerName, String freelancerAvatar, String description, String time, String budget) {
+    public Bid(String jobId, String employerID, String freelancerID, String freelancerName, String freelancerAvatar, String description, String time, String budget) {
         this.jobId = jobId;
+        this.employerID = employerID;
         this.freelancerID = freelancerID;
         this.freelancerName = freelancerName;
         this.freelancerAvatar = freelancerAvatar;
         this.description = description;
         this.time = time;
         this.budget = budget;
+    }
+
+    public String getEmployerID() {
+        return employerID;
+    }
+
+    public void setEmployerID(String employerID) {
+        this.employerID = employerID;
     }
 
     public String getJobId() {
@@ -77,5 +90,24 @@ public class Bid {
 
     public void setFreelancerAvatar(String freelancerAvatar) {
         this.freelancerAvatar = freelancerAvatar;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Bid)) return false;
+        Bid bid = (Bid) o;
+        return Objects.equals(getJobId(), bid.getJobId()) &&
+                Objects.equals(getFreelancerID(), bid.getFreelancerID()) &&
+                Objects.equals(getFreelancerName(), bid.getFreelancerName()) &&
+                Objects.equals(getFreelancerAvatar(), bid.getFreelancerAvatar()) &&
+                Objects.equals(getDescription(), bid.getDescription()) &&
+                Objects.equals(getTime(), bid.getTime()) &&
+                Objects.equals(getBudget(), bid.getBudget());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getJobId(), getFreelancerID(), getFreelancerName(), getFreelancerAvatar(), getDescription(), getTime(), getBudget());
     }
 }

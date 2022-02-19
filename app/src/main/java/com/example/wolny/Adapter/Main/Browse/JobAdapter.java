@@ -1,5 +1,6 @@
 package com.example.wolny.Adapter.Main.Browse;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +16,10 @@ import com.example.wolny.Activity.JobDetailActivity;
 import com.example.wolny.IMain;
 import com.example.wolny.Model.Job;
 import com.example.wolny.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -22,9 +27,12 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.PopularJobViewHo
 
     Context mContext;
     List<Job> list;
+    DatabaseReference databaseReference;
 
-    public JobAdapter(Context mContext){
+    public JobAdapter(Context mContext, DatabaseReference databaseReference, List<Job> list) {
         this.mContext = mContext;
+        this.databaseReference = databaseReference;
+        this.list = list;
     }
 
     public void setList(List<Job> list) {
@@ -39,18 +47,44 @@ public class JobAdapter extends RecyclerView.Adapter<JobAdapter.PopularJobViewHo
         return new PopularJobViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull PopularJobViewHolder holder, int position) {
         Job job = list.get(position);
+        if (job != null) {
+            databaseReference.child("Bids").child(job.getJobID()).addValueEventListener(new ValueEventListener() {
+                @SuppressLint("SetTextI18n")
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    int a = (int) snapshot.getChildrenCount();
+                    holder.tvNumberOfBids.setText(a + " bids");
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+        assert job != null;
         holder.tvTitle.setText(job.getTitle());
         holder.tvTime.setText(job.getTime());
+
+        String budget = job.getBudget() + " " + job.getCurrency();
+
+        if(job.getType().equals("Fixed Price")){
+            holder.tvBudget.setText(budget);
+        } else {
+            holder.tvBudget.setText(budget + " /hour");
+        }
+
         holder.setItemClickListener(new IMain.ItemClickListener() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
                 Intent intent = new Intent(mContext, JobDetailActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("job", list.get(position));
-                intent.putExtra("bundle",bundle);
+                intent.putExtra("bundle", bundle);
                 view.getContext().startActivity(intent);
             }
         });

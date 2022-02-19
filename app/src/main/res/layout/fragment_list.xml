@@ -3,11 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f4f7fc"
     tools:context=".Fragment.Main.MyJob.ListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListJob"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/employer_my_job_image"
+        android:id="@+id/ivEmptyList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:contentDescription="@string/app_name"
+        android:visibility="gone" />
 
 </FrameLayout>

@@ -5,7 +5,9 @@ import java.io.Serializable;
 public class Job implements Serializable {
     String jobID;
     String employerID;
+    String employerName;
     String freelancerID;
+    String freelancerName;
     String country;
     String category;
     String title;
@@ -20,10 +22,17 @@ public class Job implements Serializable {
     public Job() {
     }
 
-    public Job(String jobID, String employerID, String freelancerID, String country, String category, String title, String description, String type, String budget, String skillRequired, String status, String currency, String time) {
+    public Job(String jobID, String employerID, String employerName,
+               String freelancerID, String freelancerName,
+               String country, String category, String title,
+               String description, String type, String budget,
+               String skillRequired, String status, String currency, String time) {
+
         this.jobID = jobID;
         this.employerID = employerID;
+        this.employerName = employerName;
         this.freelancerID = freelancerID;
+        this.freelancerName = freelancerName;
         this.country = country;
         this.category = category;
         this.title = title;
@@ -34,6 +43,22 @@ public class Job implements Serializable {
         this.status = status;
         this.currency = currency;
         this.time = time;
+    }
+
+    public String getEmployerName() {
+        return employerName;
+    }
+
+    public void setEmployerName(String employerName) {
+        this.employerName = employerName;
+    }
+
+    public String getFreelancerName() {
+        return freelancerName;
+    }
+
+    public void setFreelancerName(String freelancerName) {
+        this.freelancerName = freelancerName;
     }
 
     public String getEmployerID() {
